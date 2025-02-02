@@ -33,7 +33,7 @@ exports.getFAQs = async (req, res) => {
     // Check if translation exists in Redis
     const cachedData = await redisClient.get(cacheKey);
     if (cachedData) {
-      console.log("♻️ Serving from Redis Cache");
+      console.log("Serving from Redis Cache");
       return res.status(200).json({ message: "Data served from cache", data: JSON.parse(cachedData) });
     }
 
